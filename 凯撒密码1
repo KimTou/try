@@ -1,0 +1,14 @@
+a='yes'
+x=3
+while a=='yes':                     #可重复运行
+    b=input('当前偏移位数为3，是否修改(yes or no)：')
+    if b=='yes':
+        x=int(input('修改为：'))        #使x由字符串转化为整数型
+    n=input('请输入需加密语句：')
+    for i in n:
+        m=ord(i)
+        total=int(m+x%26)           #取模，防止超出范围
+        if ord('A')<=total<=ord('Z') or ord('a')<=total<=ord('z'):
+            print(chr(m+x%26),end='')
+        else :
+            print(chr(m+x%26-26),end='')
